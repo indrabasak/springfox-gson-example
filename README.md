@@ -26,12 +26,18 @@ You will still need `jackson-databind` JAR. If you are missing the JAR,
 your application will make the following complain:
 
 ```
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'objectMapperConfigurer' defined in springfox.documentation.spring.web.SpringfoxWebMvcConfiguration: Post-processing of merged bean definition failed; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/ObjectMapper
+org.springframework.beans.factory.BeanCreationException: Error creating bean 
+with name 'objectMapperConfigurer' defined in 
+springfox.documentation.spring.web.SpringfoxWebMvcConfiguration: 
+Post-processing of merged bean definition failed; 
+nested exception is java.lang.NoClassDefFoundError: 
+com/fasterxml/jackson/databind/ObjectMapper
 ```
 
 The exception is due to `springfox.documentation.spring.web.ObjectMapperConfigurer`
-dependence on `com.fasterxml.jackson.databind.ObjectMapper`. The `ObjectMapper`
-exists in `com.fasterxml.jackson.core:jackson-databind:jar`
+complaining about missing `com.fasterxml.jackson.databind.ObjectMapper`. 
+
+The `ObjectMapper` exists in `com.fasterxml.jackson.core:jackson-databind:jar`
 
 #### Register JSON Serializers
 Register custom serializers for different Springfox artifacts as shown below.
@@ -54,9 +60,7 @@ Gson gson = GsonBuilder()
     // needed if you have security
     .registerTypeAdapter(SecurityConfiguration.class, 
         new SpringfoxSecurityConfigurationJsonSerializer())
-    .enableComplexMapKeySerialization()
-    .setPrettyPrinting()
-    .setDateFormat("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'")
+    ...
     .create();
 ```
 
