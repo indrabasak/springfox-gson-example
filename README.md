@@ -64,7 +64,7 @@ Gson gson = GsonBuilder()
     .create();
 ```
 
-At least, the serializer for `springfox.documentation.spring.web.json.Json` is 
+The serializer for `springfox.documentation.spring.web.json.Json` is 
 needed for viewing Swagger API JSON docs at '/v2/api-docs'.
 
 Rest of the serializers are needed for viewing Swagger UI at `/swagger-ui.html`
