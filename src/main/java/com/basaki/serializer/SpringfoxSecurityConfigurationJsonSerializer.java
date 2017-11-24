@@ -7,6 +7,14 @@ import com.google.gson.JsonSerializer;
 import java.lang.reflect.Type;
 import springfox.documentation.swagger.web.SecurityConfiguration;
 
+/**
+ * {@code SpringfoxSecurityConfigurationJsonSerializer} is a JSON serializer for
+ * Springfox's {@code SecurityConfiguration} class.
+ * <p/>
+ *
+ * @author Indra Basak
+ * @since 11/23/17
+ */
 public class SpringfoxSecurityConfigurationJsonSerializer
         implements JsonSerializer<SecurityConfiguration> {
 

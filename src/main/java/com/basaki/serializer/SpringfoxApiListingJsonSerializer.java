@@ -7,7 +7,16 @@ import com.google.gson.JsonSerializer;
 import java.lang.reflect.Type;
 import springfox.documentation.service.ApiListing;
 
-public class SpringfoxApiListingJsonSerializer implements JsonSerializer<ApiListing> {
+/**
+ * {@code SpringfoxApiListingJsonSerializer} is a JSON serializer for
+ * Springfox's {@code ApiListing} class.
+ * <p/>
+ *
+ * @author Indra Basak
+ * @since 11/23/17
+ */
+public class SpringfoxApiListingJsonSerializer
+        implements JsonSerializer<ApiListing> {
 
     @Override
     public JsonElement serialize(ApiListing apiListing, Type type,
